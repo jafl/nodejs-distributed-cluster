@@ -1,0 +1,19 @@
+{
+  "name": "distributed-cluster",
+  "version": "0.1.0",
+  "description": "Allows the process to join a distributed cluster. UDP can be used for detection within a subnet. Otherwise, you must provide the address of a host already in the cluster.",
+  "keywords": ["cluster","distributed","jafl"],
+  "author": "John Lindal",
+  "license": "BSD",
+  "repository": "",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io" : "~0.9.11"
+  },
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "scripts": {
+    "test": "./test/main"
+  }
+}
