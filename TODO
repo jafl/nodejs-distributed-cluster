@@ -7,3 +7,5 @@ every node opens socket.io connection on private port
 
 use random integer id to decide who gets a token if there is contention
 	smaller id wins
+
+http://stackoverflow.com/questions/8837236/how-to-connect-two-node-js-servers-with-websockets
