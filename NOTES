@@ -1,0 +1,6 @@
+if we had to generate node-id's
+	use large random numbers instead of sequential, to minimize chance of conflict
+	if a node joins and discovers a conflict
+		disconnect completely from the cluster
+		generate new node-id
+		re-start connection process

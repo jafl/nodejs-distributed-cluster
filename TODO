@@ -1,11 +1,29 @@
-every node opens socket.io connection on private port
-	give a node in the cluster when start a node
-		gets the rest of the nodes from that known node
-	connect to all other nodes in the cluster
-		send random integer id
-		if node responds "duplicate," generate another one and send update to all nodes
+use node-id to decide who gets a token if there is contention
+	compare strings:  lower node-id wins
 
-use random integer id to decide who gets a token if there is contention
-	smaller id wins
+joining network
+	generate node-id from hostname + worker.id (+ testing id)
+	open socket.io listener
+	if using udp, open the port
+	discover nodes via udp broadcast or given node already in network
+	connect to discovered node(s) via socket.io
+		send node-id and set of known nodes (node-id:host-info)
+		receiver marks node as pending and responds with set of known nodes
+		sender and receiver each connect to previously unknown nodes
+			recurse: when connect to unknown node, exchange lists of known nodes
+	after connected to all nodes
+		send finalize message to all nodes
+		all nodes mark new node as joined
+
+	if two nodes simultaneously try to connect to each other
+		disconnect socket coming from node with higher node-id
+
+	in order for UDP to work with cluster module, master must manage the UDP socket
+
+API
+	operates on joined nodes, not pending nodes
+
+	broadcast message
+	get named mutex
 
 http://stackoverflow.com/questions/8837236/how-to-connect-two-node-js-servers-with-websockets
