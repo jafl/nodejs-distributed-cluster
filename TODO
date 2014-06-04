@@ -18,6 +18,10 @@ joining network
 	if two nodes simultaneously try to connect to each other
 		disconnect socket coming from node with higher node-id
 
+	test when a single link breaks
+	test when a node reboots
+	test when a node dies
+
 	in order for UDP to work with cluster module, master must manage the UDP socket
 
 API
