@@ -1,3 +1,5 @@
+[![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/jafl/nodejs-distributed-cluster.svg?style=flat)](https://app.snyk.io/org/jafl/projects/)
+
 nodejs-distributed-cluster
 --------------------------
 
