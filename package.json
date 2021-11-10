@@ -8,7 +8,7 @@
   "repository": "",
   "main": "index.js",
   "dependencies": {
-    "socket.io" : "~0.9.11"
+    "socket.io" : "~1.0.1"
   },
   "engines": {
     "node": ">=0.4.0"
